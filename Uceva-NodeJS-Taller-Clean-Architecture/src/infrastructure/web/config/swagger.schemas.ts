@@ -9,7 +9,7 @@
  *         id: { type: integer, example: 1 }
  *         customerName: { type: string, example: "Ana Gómez" }
  *         total: { type: number, example: 450.5 }
- *         status: { type: string, enum: [Pending, Paid, Shipped, Delivered] }
+ *         status: { type: string, enum: [Pendiente, Pagada, Enviada, Entregada] }
  *     Category:
  *       type: object
  *       required: [id, name, description]

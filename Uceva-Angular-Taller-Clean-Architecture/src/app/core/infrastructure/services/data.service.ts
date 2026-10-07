@@ -14,29 +14,33 @@ export class DataService {
   private readonly springBootUrl = `${environment.baseUrlSpringBoot}/api`;
 
   getAllOrdersLocal(count: number): Observable<Order[]> {
-    const statuses: OrderStatus[] = ['Pending', 'Paid', 'Shipped', 'Delivered'];
+    const statuses: OrderStatus[] = ['Pendiente', 'Pagada', 'Enviada', 'Entregada'];
+    const customers = ['María Gómez', 'Carlos Rodríguez', 'Laura Martínez'];
     return of(Array.from({ length: count }, (_, index) => ({
       id: index + 1,
-      customerName: faker.person.fullName(),
+      customerName: customers[index % customers.length] ?? 'María Gómez',
       total: Number(faker.commerce.price({ min: 10, max: 500, dec: 2 })),
       status: faker.helpers.arrayElement(statuses),
     })));
   }
 
   getAllCategoriesLocal(count: number): Observable<Category[]> {
+    const categories = ['Tecnología', 'Hogar', 'Deportes', 'Libros', 'Música'];
     return of(Array.from({ length: count }, (_, index) => ({
       id: index + 1,
-      name: faker.commerce.department(),
-      description: faker.commerce.productDescription(),
+      name: categories[index % categories.length] ?? 'Tecnología',
+      description: `Artículos y novedades de ${(categories[index % categories.length] ?? 'Tecnología').toLowerCase()}.`,
     })));
   }
 
   getAllPostsLocal(count: number): Observable<Post[]> {
+    const titles = ['Arquitectura limpia', 'Buenas prácticas de software', 'Diseño de aplicaciones'];
+    const authors = ['María Gómez', 'Carlos Rodríguez', 'Laura Martínez'];
     return of(Array.from({ length: count }, (_, index) => ({
       id: index + 1,
-      title: faker.lorem.sentence(),
-      content: faker.lorem.paragraph(),
-      author: faker.person.fullName(),
+      title: titles[index % titles.length] ?? 'Arquitectura limpia',
+      content: 'Contenido de ejemplo para el taller de Arquitectura de Software.',
+      author: authors[index % authors.length] ?? 'María Gómez',
     })));
   }
 

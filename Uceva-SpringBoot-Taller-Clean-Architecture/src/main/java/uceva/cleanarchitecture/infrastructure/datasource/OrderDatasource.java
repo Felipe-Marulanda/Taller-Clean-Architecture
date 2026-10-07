@@ -10,14 +10,15 @@ import java.util.Random;
 public class OrderDatasource {
     private final Faker faker = new Faker();
     private final Random random = new Random();
-    private final String[] statuses = {"Pending", "Paid", "Shipped", "Delivered"};
+    private final String[] statuses = {"Pendiente", "Pagada", "Enviada", "Entregada"};
+    private final String[] customers = {"María Gómez", "Carlos Rodríguez", "Laura Martínez"};
 
     public List<Order> getAll(int countOrders) {
         List<Order> orders = new ArrayList<>();
         for (int i = 1; i <= countOrders; i++) {
             orders.add(new Order(
                     i,
-                    faker.name().fullName(),
+                    customers[(i - 1) % customers.length],
                     (float) faker.number().numberBetween(20, 2000),
                     statuses[random.nextInt(statuses.length)]
             ));
