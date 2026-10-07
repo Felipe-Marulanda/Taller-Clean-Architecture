@@ -1,0 +1,1 @@
+<table class="table table-striped border"><thead><tr><th>Id</th><th>Cliente</th><th>Total</th><th>Estado</th></tr></thead><tbody>@for (order of orders; track order.id) {<tr><th>{{order.id}}</th><td>{{order.customerName}}</td><td>{{order.total | currency}}</td><td>{{order.status}}</td></tr>}</tbody></table>

@@ -1,0 +1,23 @@
+# Node and Angular
+node_modules/
+dist/
+.angular/
+coverage/
+compodoc/
+npm-debug.log*
+
+# Spring Boot and Gradle
+.gradle/
+build/
+*.class
+
+# Local environment and editor files
+.env
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# Original project histories preserved before root repository merge
+.git-preserved/

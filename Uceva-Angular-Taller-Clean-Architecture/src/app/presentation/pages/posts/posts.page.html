@@ -1,0 +1,1 @@
+@switch(state){ @case('loading'){<app-alert alertState="loading" text="Cargando Posts..."></app-alert>} @case('error'){<app-alert alertState="error" text="Error al cargar Posts"></app-alert>} @case('success'){<app-posts-table [posts]="posts"></app-posts-table>} }
