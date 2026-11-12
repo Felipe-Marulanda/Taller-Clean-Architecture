@@ -4,10 +4,18 @@ Frontend Angular del taller con los módulos `orders`, `categories` y `posts`.
 Cada módulo separa modelos, contratos de repositorio, casos de uso,
 implementaciones local/Node.js/Spring Boot y componentes de presentación.
 
+## Aplicación publicada
+
+- Showcase: <https://felipe-marulanda.github.io/Taller-Clean-Architecture/>
+- Repositorio: <https://github.com/Felipe-Marulanda/Taller-Clean-Architecture>
+
+La app usa por defecto los repositorios locales y datos de ejemplo, por lo que
+funciona como sitio estático en GitHub Pages sin API obligatoria.
+
 ## Ejecución
 
 ```bash
-npm install
+npm ci
 npm start
 ```
 
@@ -39,3 +47,12 @@ npm test
 npm run build
 npm run compodoc
 ```
+
+El workflow de GitHub Actions construye con base
+`/Taller-Clean-Architecture/`, copia `index.html` como `404.html`, publica el
+artefacto y comprueba que la app responda HTTP 200.
+
+## Convención de commits
+
+Se usa Conventional Commits: `feat`, `fix`, `docs`, `test`, `refactor`, `chore`,
+`ci`, `build` y `style`.
