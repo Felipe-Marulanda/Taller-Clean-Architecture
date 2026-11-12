@@ -11,7 +11,7 @@ Los backends comparten los mismos nombres de campos y estructuras JSON.
 
 ## Showcase estático
 
-- Aplicación: <https://felipe-marulanda.github.io/Taller-Clean-Architecture/>
+- URL de Pages configurada: <https://felipe-marulanda.github.io/Taller-Clean-Architecture/>
 - Repositorio: <https://github.com/Felipe-Marulanda/Taller-Clean-Architecture>
 
 El cliente Angular usa por defecto repositorios locales con datos de ejemplo

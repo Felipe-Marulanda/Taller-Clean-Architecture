@@ -4,9 +4,9 @@ Frontend Angular del taller con los módulos `orders`, `categories` y `posts`.
 Cada módulo separa modelos, contratos de repositorio, casos de uso,
 implementaciones local/Node.js/Spring Boot y componentes de presentación.
 
-## Aplicación publicada
+## URL de Pages configurada
 
-- Showcase: <https://felipe-marulanda.github.io/Taller-Clean-Architecture/>
+- URL de Pages configurada: <https://felipe-marulanda.github.io/Taller-Clean-Architecture/>
 - Repositorio: <https://github.com/Felipe-Marulanda/Taller-Clean-Architecture>
 
 La app usa por defecto los repositorios locales y datos de ejemplo, por lo que
