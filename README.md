@@ -72,7 +72,6 @@ la aplicación estática de Pages se conservan los providers locales.
 # Angular
 npm test
 npm run build
-npm run compodoc
 
 # Node.js
 npx tsc --noEmit

@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { beforeEach, describe, expect, it } from 'vitest';
 
 import { AlertComponent } from './alert.component';
 
@@ -50,16 +51,16 @@ describe('AlertComponent', () => {
   });
 
   it('debería renderizar el texto recibido por input en loading', () => {
-    component.alertState = 'loading';
-    component.text = 'Cargando datos...';
+    fixture.componentRef.setInput('alertState', 'loading');
+    fixture.componentRef.setInput('text', 'Cargando datos...');
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.textContent).toContain('Cargando datos...');
   });
   
   it('debería renderizar el texto recibido por input en error', () => {
-    component.alertState = 'error';
-    component.text = 'Error al cargar los datos';
+    fixture.componentRef.setInput('alertState', 'error');
+    fixture.componentRef.setInput('text', 'Error al cargar los datos');
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.textContent).toContain('Error al cargar los datos');

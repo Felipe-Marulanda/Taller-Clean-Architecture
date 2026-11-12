@@ -40,12 +40,11 @@ Spring Boot:
 - `http://localhost:8080/api/categories/{count}`
 - `http://localhost:8080/api/posts/{count}`
 
-## Pruebas y documentación
+## Pruebas
 
 ```bash
 npm test
 npm run build
-npm run compodoc
 ```
 
 El workflow de GitHub Actions construye con base
