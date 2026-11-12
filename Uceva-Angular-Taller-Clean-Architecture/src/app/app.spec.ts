@@ -1,11 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
-import { NavbarOrganism } from '@brejcha13320/design-system-bootstrap';
 import { App } from './app';
 
 describe('App', () => {
-  let component: App;
   let fixture: ComponentFixture<App>;
 
   beforeEach(async () => {
@@ -17,39 +15,27 @@ describe('App', () => {
     }).compileComponents();
 
     fixture = TestBed.createComponent(App);
-    component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('deberia crear el componente', () => {
-    expect(component).toBeTruthy();
+    expect(fixture.componentInstance).toBeTruthy();
   });
 
-  it('debería definir la configuración del navbar correctamente', () => {
-    expect(component.navbarConfig).toEqual({
-      title: 'Angular Client',
-      iconConfig: {
-        icon: 'bootstrap',
-        size: 2
-      },
-      navLinks: [
-        { text: 'Órdenes', url: '/orders' },
-        { text: 'Categorías', url: '/categories' },
-        { text: 'Posts', url: '/posts' }
-      ]
-    });
-  });
+  it('debería renderizar los enlaces de navegación', () => {
+    const links = fixture.debugElement.queryAll(By.css('nav a'));
 
-  it('debería renderizar el componente NavbarOrganism', () => {
-    const navbar = fixture.debugElement.query(By.directive(NavbarOrganism));
-    expect(navbar).toBeTruthy();
-  });
-
-  it('debería pasar la configuración al NavbarOrganism', () => {
-    const navbarComponent = fixture.debugElement
-      .query(By.directive(NavbarOrganism))
-      .componentInstance;
-    expect(navbarComponent.navbarConfig).toEqual(component.navbarConfig);
+    expect(links.map((link) => link.nativeElement.textContent.trim())).toEqual([
+      'Angular Client',
+      'Órdenes',
+      'Categorías',
+      'Posts',
+    ]);
+    expect(links.slice(1).map((link) => link.attributes['href'])).toEqual([
+      '/orders',
+      '/categories',
+      '/posts',
+    ]);
   });
 
   it('debería contener un router-outlet en el template', () => {

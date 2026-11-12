@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { IconAtom } from '@brejcha13320/design-system-bootstrap';
 import { AlertState } from '../../interfaces/state.interface';
 
 /**
@@ -22,7 +21,6 @@ import { AlertState } from '../../interfaces/state.interface';
 @Component({
   selector: 'app-alert',
   templateUrl: './alert.component.html',
-  imports: [IconAtom],
 })
 export class AlertComponent {
   /**

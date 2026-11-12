@@ -1,6 +1,16 @@
-<div class="mx-5">
-    <dsb-navbar-organism [navbarConfig]="navbarConfig"></dsb-navbar-organism>
-</div>
+<header class="mx-5">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-3 px-4" aria-label="Navegación principal">
+        <a class="navbar-brand d-flex align-items-center gap-2" routerLink="/">
+            <i class="bi bi-bootstrap-fill fs-2" aria-hidden="true"></i>
+            <span>Angular Client</span>
+        </a>
+        <div class="navbar-nav ms-auto">
+            <a class="nav-link" routerLink="/orders">Órdenes</a>
+            <a class="nav-link" routerLink="/categories">Categorías</a>
+            <a class="nav-link" routerLink="/posts">Posts</a>
+        </div>
+    </nav>
+</header>
 <div class="divider-spacing"></div>
 <section>
     <router-outlet />
